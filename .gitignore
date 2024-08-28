@@ -1,0 +1,17 @@
+node_modules/
+dist/
+/bower_components
+.idea/
+.DS_Store
+/constants/classes/
+packages/data-platform/dist
+package-lock.json
+.vscode/settings.json
+yarn-error.log
+.history/
+coverage/
+private/
+yarn.lock
+pnpm-lock.yaml
+target/
+bin/

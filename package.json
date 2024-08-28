@@ -1,0 +1,25 @@
+{
+  "name": "auto-exclude-node-modules-4-tm",
+  "version": "0.0.1",
+  "description": "design 4 time machine",
+  "main": "index.ts",
+  "scripts": {
+    "start": "sudo ts-node ./lib/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iapYang/auto-exclude-node-modules-4-TM.git"
+  },
+  "author": "iapyang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iapYang/auto-exclude-node-modules-4-TM/issues"
+  },
+  "homepage": "https://github.com/iapYang/auto-exclude-node-modules-4-TM#readme",
+  "dependencies": {
+    "@types/node": "^22.5.1",
+    "sudo-prompt": "^9.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
