@@ -2,7 +2,7 @@ import { execSync } from "child_process";
 import { readdirSync } from "fs";
 import { join, resolve } from "path";
 
-let excludeList = [] as string[];
+const excludeList = [] as string[];
 
 try {
     const excludeListDataBuffer = execSync("defaults read /Library/Preferences/com.apple.TimeMachine SkipPaths");
@@ -12,7 +12,9 @@ try {
     console.log("excludeListData", excludeListData);
 
     // 使用正则表达式提取路径
-    excludeList = (excludeListData.match(/"([^"]+)"/g) ?? [] as string[]).map(path => path.replace(/"/g, ''));
+    (excludeListData.match(/"([^"]+)"/g) ?? [] as string[]).forEach(path => {
+        excludeList.push(path.replace(/"/g, ''));
+    });
 
     console.log("excludeList", excludeList);
 } catch (error) {
@@ -35,7 +37,9 @@ const dir = resolve(__dirname, "../../");
 
 console.log(dir);
 
-const nodeModulesPaths: string[] = [];
+const nodeModulesPaths: string[] = [
+    "~/Library/pnpm",
+];
 
 traverseDirectory(dir, nodeModulesPaths);
 
