@@ -38,7 +38,14 @@ const dir = resolve(__dirname, "../../");
 console.log(dir);
 
 const nodeModulesPaths: string[] = [
-    "~/Library/pnpm",
+    // gradle缓存路径
+    "~/.gradle/caches",
+    // npm缓存路径
+    "~/.npm",
+    // yarn缓存路径
+    "~/Library/Caches/Yarn",
+    // pnpm缓存路径
+    "~/Library/pnpm/store",
 ];
 
 traverseDirectory(dir, nodeModulesPaths);
