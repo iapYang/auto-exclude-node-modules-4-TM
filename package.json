@@ -4,6 +4,9 @@
   "description": "design 4 time machine",
   "main": "index.ts",
   "scripts": {
+    "build": "esbuild lib/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.js",
+    "copy": "cp -r dist/index.js ~/prebackup.js",
+    "deploy": "pnpm run build && pnpm run copy",
     "start": "sudo ts-node ./lib/index.ts"
   },
   "repository": {
@@ -21,5 +24,8 @@
     "sudo-prompt": "^9.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "esbuild": "0.19.1"
   }
 }

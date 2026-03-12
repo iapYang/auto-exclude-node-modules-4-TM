@@ -33,7 +33,7 @@ for (const path of excludeList) {
     }
 }
 
-const dir = resolve(__dirname, "../../");
+const dir = resolve("Project");
 
 console.log(dir);
 
