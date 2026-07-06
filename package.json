@@ -2,12 +2,16 @@
   "name": "auto-exclude-node-modules-4-tm",
   "version": "0.0.1",
   "description": "design 4 time machine",
-  "main": "index.ts",
+  "main": "dist/prebackup.js",
+  "bin": {
+    "prebackup": "dist/prebackup.js",
+    "postbackup": "dist/postbackup.js"
+  },
   "scripts": {
-    "build": "esbuild lib/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.js",
-    "copy": "cp -r dist/index.js ~/prebackup.js",
-    "deploy": "pnpm run build && pnpm run copy",
-    "start": "sudo ts-node ./lib/index.ts"
+    "build": "esbuild lib/prebackup.ts lib/postbackup.ts --bundle --platform=node --target=node20 --outdir=dist",
+    "start": "ts-node ./lib/prebackup.ts",
+    "link": "pnpm run build && npm link",
+    "unlink": "npm unlink --global auto-exclude-node-modules-4-tm"
   },
   "repository": {
     "type": "git",
